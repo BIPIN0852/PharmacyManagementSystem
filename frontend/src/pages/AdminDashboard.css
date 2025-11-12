@@ -1,0 +1,161 @@
+/* 🌈 Smooth global transitions */
+* {
+  transition: all 0.25s ease-in-out;
+}
+
+/* 🌤️ Light & Dark base tweaks */
+body {
+  font-family: "Inter", "Poppins", sans-serif;
+  background-color: #1f7ad4;
+}
+
+/* 🌟 Sidebar enhancement */
+aside {
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+aside.dark {
+  background: rgba(31, 41, 55, 0.9);
+}
+
+/* 🧭 Sidebar menu items */
+aside nav div {
+  transition: background 0.25s, transform 0.25s;
+}
+aside nav div:hover {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* 🧊 Sidebar collapsed hover */
+aside:not(.expanded) img {
+  transition: transform 0.3s;
+}
+aside:not(.expanded) img:hover {
+  transform: scale(1.1);
+}
+
+/* 🔔 Notification dropdown styling */
+.notification-box {
+  animation: fadeIn 0.3s ease forwards;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.notification-box .p-3:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* 🪞 Profile dropdown */
+.profile-menu button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* 💡 Summary cards */
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transform: translateY(0);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+.dark .card {
+  background: rgba(55, 65, 81, 0.8);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+/* 📈 Chart container */
+.recharts-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 🧾 Tables */
+table {
+  border-collapse: separate;
+  border-spacing: 0 6px;
+}
+table tr {
+  background: white;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+table tr:hover {
+  background: rgba(59, 130, 246, 0.05);
+  transform: scale(1.01);
+}
+.dark table tr {
+  background: rgba(55, 65, 81, 0.7);
+}
+.dark table tr:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+th {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.8rem;
+}
+
+/* 📱 Pagination buttons */
+button[title="Next"],
+button[title="Previous"],
+button[title="First"],
+button[title="Last"] {
+  transition: background 0.2s, transform 0.2s;
+}
+button[title="Next"]:hover,
+button[title="Previous"]:hover,
+button[title="First"]:hover,
+button[title="Last"]:hover {
+  transform: scale(1.15);
+}
+
+/* 🏷️ Status badges */
+span.bg-green-100 {
+  background: linear-gradient(135deg, #bbf7d0, #86efac);
+}
+span.bg-yellow-100 {
+  background: linear-gradient(135deg, #fef9c3, #fde68a);
+}
+span.bg-gray-100 {
+  background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+}
+
+/* 🌀 Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.marquee-text {
+  animation: marquee 14s linear infinite;
+}
+
+/* 🌙 Dark mode glow */
+.dark .text-yellow-300 {
+  text-shadow: 0 0 6px rgba(250, 204, 21, 0.4);
+}
+.dark .text-green-400 {
+  text-shadow: 0 0 4px rgba(34, 197, 94, 0.3);
+}
+
+/* ✨ FadeIn animation for dropdowns */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

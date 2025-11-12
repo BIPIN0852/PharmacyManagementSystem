@@ -1,27 +1,27 @@
-// import { useEffect } from "react";
-// import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-// const Dashboard = () => {
-//   const location = useLocation();
+const Dashboard = () => {
+  const location = useLocation();
 
-//   useEffect(() => {
-//     const params = new URLSearchParams(location.search);
-//     const token = params.get("token");
-//     if (token) {
-//       localStorage.setItem("token", token);
-//       window.history.replaceState({}, document.title, "/dashboard"); // remove ?token from URL
-//     }
-//   }, [location]);
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const token = params.get("token");
+    if (token) {
+      localStorage.setItem("token", token);
+      window.history.replaceState({}, document.title, "/dashboard"); // remove ?token from URL
+    }
+  }, [location]);
 
-//   return (
-//     <div style={{ textAlign: "center", marginTop: "2rem" }}>
-//       <h2>✅ Logged in successfully with Google!</h2>
-//       <p>Token saved to localStorage.</p>
-//     </div>
-//   );
-// };
+  return (
+    <div style={{ textAlign: "center", marginTop: "2rem" }}>
+      <h2>✅ Logged in successfully with Google!</h2>
+      <p>Token saved to localStorage.</p>
+    </div>
+  );
+};
 
-// export default Dashboard;
+export default Dashboard;
 
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";

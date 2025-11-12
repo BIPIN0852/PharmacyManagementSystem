@@ -355,6 +355,7 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import pharmacyHero from "../assets/register.jpg"; // same image as login for consistency
+import "tailwindcss";
 
 const Register = () => {
   const { register, error, loading, user } = useAuth();
